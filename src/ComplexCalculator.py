@@ -22,7 +22,7 @@ def difference(a, b):
 # Definición de la multiplicación
 def multiply(a, b):
     real_result = ((a[0]*b[0])-(a[1]*b[1]))
-    imaginary_result = ((a[0]*b[1])+(a[1]*b[2]))
+    imaginary_result = ((a[0]*b[1])+(a[1]*b[0]))
     return (real_result, imaginary_result)
 
 # Definición de la división
@@ -47,6 +47,7 @@ def ConvertToPolar(a):
 
 # Conversión de forma cartesiana a coordenadas polares. Polares ===> Cartesiano
 def ConverToCartesian(a):
+    r = a[0]
     ang = math.radians(a[1])
     real_result = r*math.cos(ang)
     imaginary_result = r*math.sin(ang)
@@ -54,8 +55,8 @@ def ConverToCartesian(a):
 
 # Metodo para obtener la fase de un complejo
 def phase(a):
-    result = ConvertToPolar(a)
-    return result[1]
+    result = math.radians(ConvertToPolar(a)[1])
+    return result
 
 # Declaración del main para pruebas internas.
 def main():
@@ -64,4 +65,4 @@ def main():
     print(add(complex_1, complex_2))
     print(difference(complex_1, complex_2))
 
-main()
+#main()
