@@ -1,4 +1,5 @@
 from sys import stdin
+import math
 
 # En este caso las tuplas representarán a los complejos.
 # La primera parte de la tupla representará la parte Real del complejo
@@ -30,6 +31,31 @@ def division(a, b):
     imaginary_result = ((b[0]*a[1])-(a[0]*b[1]))/((b[0]**2)+(b[1]**2))
     return (real_result, imaginary_result)
 
+# Definición del conjugado
+def conjugate(a):
+    return (a[0], a[1]*-1)
+
+# Definición del modulo
+def module(a):
+    return ((a[0]**2)+(a[1]**2))**(1/2)
+
+# Conversión a coordenadas polares. Cartesiano ===> Polares
+def ConvertToPolar(a):
+    r = module(a)
+    ang = math.degrees(math.atan(a[1]/a[0]))
+    return [r, ang]
+
+# Conversión de forma cartesiana a coordenadas polares. Polares ===> Cartesiano
+def ConverToCartesian(a):
+    ang = math.radians(a[1])
+    real_result = r*math.cos(ang)
+    imaginary_result = r*math.sin(ang)
+    return (real_result, imaginary_result)
+
+# Metodo para obtener la fase de un complejo
+def phase(a):
+    result = ConvertToPolar(a)
+    return result[1]
 
 # Declaración del main para pruebas internas.
 def main():
