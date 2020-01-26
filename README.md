@@ -4,23 +4,23 @@
 ---
 - Complex calculator
 > Operations:
---> Addition between two complex
+> -> Addition between two complex
 
---> Product between two complex
+> -> Product between two complex
 
---> Difference between two complex (a-b)
+> -> Difference between two complex (a-b)
 
---> Division between two complex (a/b)
+> -> Division between two complex (a/b)
 
---> Modulus
+> -> Modulus
 
---> Conjugate
+> -> Conjugate
 
---> Conversion to polar
+> -> Conversion to polar
 
---> Conversion to cartesian
+> -> Conversion to cartesian
 
---> Phase
+> -> Phase
 
 ---
 #### Which tools i used to create the library
