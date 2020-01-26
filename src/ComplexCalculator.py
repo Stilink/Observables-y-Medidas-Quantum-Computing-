@@ -42,20 +42,20 @@ def module(a):
 # Conversión a coordenadas polares. Cartesiano ===> Polares
 def ConvertToPolar(a):
     r = module(a)
-    ang = math.degrees(math.atan(a[1]/a[0]))
-    return [r, ang]
+    ang = math.atan(a[1]/a[0])
+    return (r, ang)
 
 # Conversión de forma cartesiana a coordenadas polares. Polares ===> Cartesiano
 def ConverToCartesian(a):
     r = a[0]
-    ang = math.radians(a[1])
+    ang = a[1]
     real_result = r*math.cos(ang)
     imaginary_result = r*math.sin(ang)
     return (real_result, imaginary_result)
 
 # Metodo para obtener la fase de un complejo
 def phase(a):
-    result = math.radians(ConvertToPolar(a)[1])
+    result = ConvertToPolar(a)[1]
     return result
 
 # Declaración del main para pruebas internas.

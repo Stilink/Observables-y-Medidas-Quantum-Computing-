@@ -6,6 +6,7 @@ def checkingSize(a,b):
         return False
     else:
         return True
+        
 # Definición de suma de vectores
 def addVectors(a,b):
     if(checkingSize(a,b)):
@@ -38,3 +39,4 @@ def multiplyScalar(c, vector):
 
 # Definición del main para pruebas internas
 def main():
+    
