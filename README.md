@@ -6,27 +6,19 @@
 > Operations:
 --> Addition between two complex
 
-
 --> Product between two complex
-
 
 --> Difference between two complex (a-b)
 
-
 --> Division between two complex (a/b)
-
 
 --> Modulus
 
-
 --> Conjugate
-
 
 --> Conversion to polar
 
-
 --> Conversion to cartesian
-
 
 --> Phase
 
