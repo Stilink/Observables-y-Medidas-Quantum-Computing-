@@ -4,12 +4,9 @@
 ---
 - Complex calculator
 > Operations:
-
-> -> Addition between two complex
-
-> -> Product between two complex
-
-> -> Difference between two complex (a-b)
+ - Addition between two complex
+ - Product between two complex
+ - Difference between two complex (a-b)
 
 > -> Division between two complex (a/b)
 
