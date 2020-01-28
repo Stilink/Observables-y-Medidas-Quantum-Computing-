@@ -37,6 +37,14 @@ def multiplyScalar(c, vector):
         vector_result.append(result)
     return vector_result
 
+# Declaración del conjugado de un vector
+def conjugateVector(a):
+    vector_result = []
+    for i in a:
+        result = ComplexCalculator.conjugate(i)
+        vector_result.append(result)
+    return vector_result
+
 # Definición del main para pruebas internas
 def main():
     vectorTest=[(1,1),(2,2),(3,3)]
@@ -44,5 +52,6 @@ def main():
     print(addVectors(vectorTest, vectorTest2))
     print(inverse(vectorTest))
     print(multiplyScalar(2, vectorTest))
+    print(conjugateVector(vectorTest))
 # main()
     

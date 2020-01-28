@@ -1,4 +1,5 @@
 import VectorComplexCalculator
+import ComplexCalculator
 
 # Definición de suma de matrices
 def addMatrix(A, B):
@@ -39,6 +40,14 @@ def transposeMatrix(A):
         Matrix_result.append(Vector_result)
     return Matrix_result
 
+# Declaración de la conjugada de una matriz
+def conjugateMatrix(A):
+    Matrix_result = []
+    for i in range(len(A)):
+        vector_result = VectorComplexCalculator.conjugateVector(A[i])
+        Matrix_result.append(vector_result)
+    return Matrix_result
+
 # Declaración del main para pruebas internas
 def main():
     matrixTest = [[(1,1), (2,2)],[(3,3), (4,4)]]
@@ -48,5 +57,6 @@ def main():
     # print(inverseMatrix(matrixTest))
     # print(scalarMatrix(2,matrixTest))
     print(transposeMatrix(matrixTest))
+    print(conjugateMatrix(matrixTest))
 
-main()
+# main()
