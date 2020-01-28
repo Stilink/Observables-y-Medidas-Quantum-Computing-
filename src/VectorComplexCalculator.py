@@ -23,20 +23,26 @@ def addVectors(a,b):
     return vector_result
 
 # Definición de inversa de vectores
-def invert(a):
+def inverse(a):
     vector_result = []
     for i in range(len(a)):
-        vector_result.append((-1*a[0],-1*a[1]))
+        vector_result.append((-1*a[i][0],-1*a[i][1]))
     return vector_result
 
 # Definición de la multiplicación por un escalar de vectores
 def multiplyScalar(c, vector):
     vector_result = []
     for i in range(len(vector)):
-        result = ComplexCalculator.multiply(c, vector[i])
+        result = ComplexCalculator.multiply((c, 0), vector[i])
         vector_result.append(result)
     return vector_result
 
 # Definición del main para pruebas internas
 def main():
+    vectorTest=[(1,1),(2,2),(3,3)]
+    vectorTest2=[(4,4),(5,5),(6,6)]
+    print(addVectors(vectorTest, vectorTest2))
+    print(inverse(vectorTest))
+    print(multiplyScalar(2, vectorTest))
+# main()
     

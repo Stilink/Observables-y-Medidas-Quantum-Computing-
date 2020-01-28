@@ -42,7 +42,7 @@ def module(a):
 # Conversión a coordenadas polares. Cartesiano ===> Polares
 def ConvertToPolar(a):
     r = module(a)
-    ang = math.atan(a[1]/a[0])
+    ang = math.atan2(a[1], a[0])
     return (r, ang)
 
 # Conversión de forma cartesiana a coordenadas polares. Polares ===> Cartesiano
