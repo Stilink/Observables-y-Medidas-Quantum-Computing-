@@ -12,7 +12,7 @@ def addVectors(a,b):
     if(checkingSize(a,b)):
         n = len(a)
     else:
-        print("Aquí debería estallarse y mentarle su madre al de los vectores")
+        print("Los vectores deben tener tamaños iguales si se desea sumarlos")
         return
     vector_result = []
     for i in range(n):

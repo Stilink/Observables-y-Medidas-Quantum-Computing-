@@ -47,6 +47,6 @@ def main():
     # print(addMatrix(matrixTest, matrixTest2))
     # print(inverseMatrix(matrixTest))
     # print(scalarMatrix(2,matrixTest))
-    print(transposeMatrix(MatrixVector))
+    print(transposeMatrix(matrixTest))
 
 main()
