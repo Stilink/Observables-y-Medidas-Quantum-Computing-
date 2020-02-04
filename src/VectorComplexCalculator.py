@@ -45,13 +45,26 @@ def conjugateVector(a):
         vector_result.append(result)
     return vector_result
 
+# Declaración del producto interno de dos vectores
+def innerProduct(a,b):
+    if(len(a)!=len(b)):
+        raise Exception("Los vectores deben tener el mismo tamaño para poder calcular el producto interno")
+    complex_result = None
+    a = conjugateVector(a)
+    add = (0,0)
+    for i in range(len(a)):
+        add = ComplexCalculator.add(add, ComplexCalculator.multiply(a[i],b[i]))
+    return add
+    
+
 # Definición del main para pruebas internas
 def main():
     vectorTest=[(1,1),(2,2),(3,3)]
     vectorTest2=[(4,4),(5,5),(6,6)]
-    print(addVectors(vectorTest, vectorTest2))
-    print(inverse(vectorTest))
-    print(multiplyScalar(2, vectorTest))
-    print(conjugateVector(vectorTest))
-# main()
+    # print(addVectors(vectorTest, vectorTest2))
+    # print(inverse(vectorTest))
+    # print(multiplyScalar(2, vectorTest))
+    # print(conjugateVector(vectorTest))
+    print(innerProduct(vectorTest, vectorTest2))
+main()
     
