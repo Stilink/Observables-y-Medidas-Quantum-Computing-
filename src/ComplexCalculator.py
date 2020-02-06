@@ -23,6 +23,10 @@ def difference(a, b):
 def multiply(a, b):
     real_result = ((a[0]*b[0])-(a[1]*b[1]))
     imaginary_result = ((a[0]*b[1])+(a[1]*b[0]))
+    if(abs(real_result)==0.0) :
+        real_result = 0.0
+    if(abs(imaginary_result)==0.0):
+        imaginary_result = 0.0
     return (real_result, imaginary_result)
 
 # Definición de la división

@@ -104,6 +104,9 @@ def isHermitian(A):
     return False
 
 # Declaración del producto tensor entre dos matrices
+"""Este código hace la operación de multiplicar todos los elementos de la primera matriz por los elementos de la segunda.
+Las matrices resultantes de cada multiplicación son enviadas a la función de llenado fill, 
+la cual se encargará de acomodar en las posiciones adecuadas la información."""
 def tensorProduct(A,B):
     n = len(A)*len(B)
     m = len(A[0])*len(B[0])
@@ -115,6 +118,10 @@ def tensorProduct(A,B):
     return matrix_result
 
 # Función auxiliar para el producto tensor
+"""Esta función simplemente se encarga de acomodar en las posiciones adecuadas, cada una de las matrices que recibe.
+Teniendo en cuenta las posiciones del elemento que esta multiplicando, esta información
+nos da una posición desde donde iniciar a llenar y donde debería terminar cada uno de los llenados."""
+
 def fill(A, matrix_result, x, y):
     n = len(A)
     m = len(A[0])
@@ -128,10 +135,10 @@ def fill(A, matrix_result, x, y):
     
 # Declaración del main para pruebas internas
 def main():
-    """
     matrixTest = [[(1,0), (2,0)],[(3,0), (4,0)]]
     MatrixVector = [[(1,1),(2,2)]]
     matrixTest2 = [[(5,0), (6,0)],[(7,0), (8,0)]]
+    """
     matrixMultiply1=[[(1,0),(2,0),(3,0)],[(4,0),(5,0),(6,0)]]
     matrixMultiply2 = [[(7,0),(8,0)],[(9,0),(10,0)],[(11,0),(12,0)]]
     vector = [(1,1),(2,2)]
@@ -144,34 +151,39 @@ def main():
     # print(adjointMatrix(matrixTest))
     # print(multiplyMatrix(matrixMultiply1, matrixMultiply2))
     # print(actionMatrixVector(matrixTest, vector))
-    # print(normalMatrix(matrixTest))
-    print(tensorProduct(matrixTest, matrixTest2))
-    """
+    # print(normalMatrix(matrixTest))"""
+    # print(tensorProduct(matrixTest, matrixTest2))
+
+
+
+
+
+    # Esta variable Y es el real 1/sqrt(2)
     y = ((1/(2**0.5)),0)
+    # Usando la variable anterior obtenemos la matriz H que es resultado de multiplica Y por la matriz que se ve abajo
     H=scalarMatrix(y,[
         [(1,0),(1,0)],
         [(1,0),(-1,0)]
     ])
+    # Compuerta lógica X, representada por esta matriz
     X = [
         [(0,0),(1,0)],
         [(1,0),(0,0)]
     ]
+    # Estado inicial del qbit 0
     q0 = [
         [(1,0)],
         [(0,0)]
     ]
+    # Estado inicial del qbit 1
     q1 = [
         [(1,0)],
         [(0,0)]
     ]
-    q0_1 = tensorProduct(q0,q1)
-    print(q0_1)
-    M1 = tensorProduct(H,H)
-    for i in M1:
-        print(i)
-    M2 = tensorProduct(H,X)
-    for i in M2:
-        print(i)
+    # Por ende las 'matrices' a operar saldrán de aquí
+    q0_1 = tensorProduct(q0,q1) # Como matriz que representa el estado inicial de los Qbits
+    M1 = tensorProduct(H,H) # Este es el primer producto tensor, resultado de tensor(H,H)=M1
+    M2 = tensorProduct(H,X) # Este es el segundo producto tensor, resultado de tensor(H,X)=M2
     # Haremos entonces un M2*M1*estado_inicial
     answer = multiplyMatrix(multiplyMatrix(M2,M1),q0_1)
     for i in answer:
