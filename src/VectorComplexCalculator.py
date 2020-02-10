@@ -33,7 +33,7 @@ def inverse(a):
 def multiplyScalar(c, vector):
     vector_result = []
     for i in range(len(vector)):
-        result = ComplexCalculator.multiply(c, vector[i])
+        result = ComplexCalculator.multiply((c,0), vector[i])
         vector_result.append(result)
     return vector_result
 
