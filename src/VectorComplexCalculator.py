@@ -55,7 +55,25 @@ def innerProduct(a,b):
     for i in range(len(a)):
         add = ComplexCalculator.add(add, ComplexCalculator.multiply(a[i],b[i]))
     return add
+
+# Declaración de la norma de un vector
+def norm(v):
+    result = None
+    add = 0
+    for i in range(len(v)):
+        add += (v[i][0]**2)+(v[i][1]**2)
+    result = add ** 0.5
+    return result
     
+# Declaración de la distancia entre dos vectores
+def distance(v,w):
+    if(len(v)!=len(w)):
+        raise Exception("Los vectores deben tener la misma dimensión - Distance")
+    result = None
+    difference = addVectors(v, inverse(w))
+    result = norm(difference)
+    return result
+
 
 # Definición del main para pruebas internas
 def main():
@@ -65,6 +83,6 @@ def main():
     # print(inverse(vectorTest))
     # print(multiplyScalar(2, vectorTest))
     # print(conjugateVector(vectorTest))
-    print(innerProduct(vectorTest, vectorTest2))
+    print(distance(vectorTest,vectorTest2))
 # main()
     

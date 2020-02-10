@@ -82,6 +82,7 @@ def actionMatrixVector(A, v):
     vector_result = transposeMatrix(matrix_result)[0] # Primero transponemos el resultado para volver a tener un vector
     return vector_result
 
+""" ERROR
 # Declaración de la norma de una matriz
 def normalMatrix(A):
     result = 0
@@ -90,18 +91,46 @@ def normalMatrix(A):
             result += (A[i][j][0]**2)+(A[i][j][1]**2)
     result = result**0.5
     return result
+"""
 
+""" ERROR
 # Declaración de la distancia entre matrices
 def distanceMatrix(A,B):
-    return 
+    if(len(A)!=len(B) or len(A[0])!=len(B[0])):
+        raise Exception("Las matrices deben tener el mismo tamaño - Distancia")
+    inverse_B = inverseMatrix(B)
+    difference = addMatrix(A,inverse_B)
+    result = normalMatrix(difference) 
+    return result
+"""
 
 # Declaración de la función que determina si una matriz es unitaria
 def isUnitary(A):
-    return False
+    isUnitary = True
+    adjoint_A = adjointMatrix(A)
+    matrix_result = multiplyMatrix(A, adjoint_A)
+    for i in range(len(matrix_result)):
+        for j in range(len(matrix_result[0])):
+            validator = ComplexCalculator.difference(matrix_result[i][j],(1,0))
+            if(i==j and (abs(validator[0])>0.00001 or abs(validator[1])>0.00001)):
+                isUnitary = False
+                break
+            if(i!=j and (abs(matrix_result[i][j][0])>0.00001 or abs(matrix_result[i][j][1])>0.00001)):
+                isUnitary = False
+                break
+    return isUnitary
 
 # Declaración de la función que determina si una matriz es hermitiana
 def isHermitian(A):
-    return False
+    isHermitian = True
+    matrix_result = transposeMatrix(conjugateMatrix(A))
+    for i in range(len(A)):
+        for j in range(len(A[0])):
+            validator = ComplexCalculator.difference(A[i][j],matrix_result[i][j])
+            if(abs(validator[0])>0.00001 or abs(validator[1])>0.00001):
+                isHermitian=False
+                break
+    return isHermitian
 
 # Declaración del producto tensor entre dos matrices
 """Este código hace la operación de multiplicar todos los elementos de la primera matriz por los elementos de la segunda.
@@ -135,25 +164,9 @@ def fill(A, matrix_result, x, y):
     
 # Declaración del main para pruebas internas
 def main():
-    matrixTest = [[(1,0), (2,0)],[(3,0), (4,0)]]
-    MatrixVector = [[(1,1),(2,2)]]
-    matrixTest2 = [[(5,0), (6,0)],[(7,0), (8,0)]]
-    """
-    matrixMultiply1=[[(1,0),(2,0),(3,0)],[(4,0),(5,0),(6,0)]]
-    matrixMultiply2 = [[(7,0),(8,0)],[(9,0),(10,0)],[(11,0),(12,0)]]
-    vector = [(1,1),(2,2)]
-
-    # print(addMatrix(matrixTest, matrixTest2))
-    # print(inverseMatrix(matrixTest))
-    # print(scalarMatrix(2,matrixTest))
-    # print(transposeMatrix(matrixTest))
-    # print(conjugateMatrix(matrixTest))
-    # print(adjointMatrix(matrixTest))
-    # print(multiplyMatrix(matrixMultiply1, matrixMultiply2))
-    # print(actionMatrixVector(matrixTest, vector))
-    # print(normalMatrix(matrixTest))"""
-    # print(tensorProduct(matrixTest, matrixTest2))
-
+    # matrixTest = [[(1,0), (2,0)],[(3,0), (4,0)]]
+    # MatrixVector = [[(1,1),(2,2)]]
+    # matrixTest2 = [[(5,0), (6,0)],[(7,0), (8,0)]]
 
 
 
