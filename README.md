@@ -25,7 +25,7 @@ This library was created with the aim of understanding the functioning of quantu
 > - Norm of a complex vector.
 > - Distance between two complex vectors.
 
-- Matrix of complex numerbs library operations
+- Matrix of complex numbers library operations
 > Operations with matrix of complex:
 > - Addition between two matrixes.
 > - Inverse of a matrix.
