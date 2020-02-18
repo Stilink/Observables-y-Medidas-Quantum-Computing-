@@ -201,5 +201,4 @@ def main():
     answer = multiplyMatrix(multiplyMatrix(M2,M1),q0_1)
     for i in answer:
         print(i)
-
-main()
+# main()

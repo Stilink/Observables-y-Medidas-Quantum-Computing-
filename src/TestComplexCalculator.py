@@ -12,21 +12,21 @@ Metodo generador de numeros complejos, retornandolos como una tupla (a,b) donde 
 Es capaz de generar valores 0<=|a|<=100
 Esto para tener en cuenta los casos negativos y los ceros
 """
-def generatorOfComplex(type):
+def generatorOfComplex(case):
     complex_to_return = None
-    if(type=="Positivos"):
+    if(case=="Positivos"):
         real = (random()*100)
         imag = (random()*100)
         complex_to_return = (real, imag)
-    elif(type=="Negativos"):
+    elif(case=="Negativos"):
         real = (random()*-100)
         imag = (random()*-100)
         complex_to_return = (real, imag)
-    elif(type=="Positivo - Negativo"):
+    elif(case=="Positivo - Negativo"):
         real = (random()*100)
         imag = (random()*-100)
         complex_to_return = (real, imag)
-    elif(type=="Negativo - Positivo"):
+    elif(case=="Negativo - Positivo"):
         real = (random()*-100)
         imag = (random()*100)
         complex_to_return = (real, imag)

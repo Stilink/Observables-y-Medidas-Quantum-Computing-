@@ -11,15 +11,15 @@ cases = ["Positivos", "Negativos", "Positivo - Negativo", "Negativo - Positivo"]
 # Tamaño por defecto del vector para las pruebas
 n = 100
 # Generador de vectores usados dentro de las pruebas
-def generatorOfVectors(type, n):
+def generatorOfVectors(case, n):
     vector_to_return = []
     for i in range(n):
-        vector_to_return.append(TestComplexCalculator.generatorOfComplex(type))
+        vector_to_return.append(TestComplexCalculator.generatorOfComplex(case))
     return vector_to_return
 
 # Generador de un numero aleatorio necesario en algunos metodos
-def generatorRandomNumber(type):
-    comp = TestComplexCalculator.generatorOfComplex(type)[0]
+def generatorRandomNumber(case):
+    comp = TestComplexCalculator.generatorOfComplex(case)
     return comp
 
 
@@ -54,8 +54,8 @@ class TestVectorComplexCalculator(unittest.TestCase):
             vector_result = VectorComplexCalculator.multiplyScalar(number, vector1)
             vector_to_compare =[]
             for i in range(n):
-                vector_to_compare.append((number*vector1[i][0], number*vector1[i][1]))
-            self.assertEqual(vector_result, vector_to_compare)
+                vector_to_compare.append(ComplexCalculator.multiply(number,vector1[i]))
+            self.assertEqual(vector_to_compare, vector_result)
     
     # Test para el conjugado de un vector
     def test_conjugate(self):
