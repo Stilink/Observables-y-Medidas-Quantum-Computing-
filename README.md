@@ -50,4 +50,4 @@ This library was created with the aim of understanding the functioning of quantu
 - Python3
 
 #### Author
-> - Jeymar Vega
+- Jeymar Vega
