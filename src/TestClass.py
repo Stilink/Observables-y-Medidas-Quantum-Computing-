@@ -108,26 +108,84 @@ def main():
     state_personality = [(0.8,0),(0.2,0)]
 
     # t=0
-    print(move2(system_2_position,system_2_personality,state_position,state_personality,0))
+    # print(move2(system_2_position,system_2_personality,state_position,state_personality,0))
     
 
     # t=1
-    print(move2(system_2_position,system_2_personality,state_position,state_personality,1))
+    # print(move2(system_2_position,system_2_personality,state_position,state_personality,1))
     
 
     # t=2
-    print(move2(system_2_position,system_2_personality,state_position,state_personality,2))
+    # print(move2(system_2_position,system_2_personality,state_position,state_personality,2))
 
     # t=3
-    print(move2(system_2_position,system_2_personality,state_position,state_personality,3))
+    # print(move2(system_2_position,system_2_personality,state_position,state_personality,3))
 
     # t=4
-    print(move2(system_2_position,system_2_personality,state_position,state_personality,4))
+    # print(move2(system_2_position,system_2_personality,state_position,state_personality,4))
 
     # t=5
-    print(move2(system_2_position,system_2_personality,state_position,state_personality,5))
+    # print(move2(system_2_position,system_2_personality,state_position,state_personality,5))
     
+    """ Segunda actividad de clase, para comenzar usamos el mismo sistema 2 de los ejercicios anteriores.
+        Por lo cual se reutilizará la matriz del sistema hecha arriba."""
+    # Primer sistema de la actividad 2
+    system_2_position = [
+        [(0,0),(1/6,0),(5/6,0)],
+        [(1/3,0),(1/2,0),(1/6,0)],
+        [(2/3,0),(1/3,0),(0,0)]
+    ]
+
+    system_2_personality = [
+        [(1/3,0),(2/3,0)],
+        [(2/3,0),(1/3,0)],
+    ]
 
 
+    # Primer ejercicio
+    state_position = [(0.01,0),(0.9,0),(0.09,0)]
+    state_personality = [(0.05,0),(0.95,0)]
 
+    # print(move2(system_2_position, system_2_personality, state_position, state_personality,2))
+
+    # Segundo ejercicio - Se mantienen los estados iniciales
+    # print(move2(system_2_position,system_2_personality,state_position,state_personality,8000))
+
+    """
+    M = [
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [1,0,0,0,1,0],
+        [0,0,0,1,0,0],
+        [0,1,0,0,0,1],
+        [0,0,1,0,0,0]
+    ]
+    result = MatrixComplexCalculator.multiplyMatrix(MatrixComplexCalculator.adjointMatrix(M),M)
+    for x in result:
+        print(x)
+    # Quiz
+    state_initial=[(1/5,0),(7/10,0),(1/10,0)]
+    print(move(system_2_position, 4, state_initial))
+    x = (1/(2**0.5))
+    M = [
+        [(x,0),(0,x)],
+        [(x,0),(0,-x)]
+    ]
+    state = [(1,0),(0,0)]
+    print(move(M,1,state))
+    """
+    x = (1/(2**0.5))
+    r = (1/(6**0.5))
+    M=[
+        [(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)],
+        [(x,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)],
+        [(x,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)],
+        [(0,0),(-r,r),(0,0),(1,0),(0,0),(0,0),(0,0),(0,0)],
+        [(0,0),(-r,-r),(0,0),(0,0),(1,0),(0,0),(0,0),(0,0)],
+        [(0,0),(r,-r),(-r,r),(0,0),(0,0),(1,0),(0,0),(0,0)],
+        [(0,0),(0,0),(-r,-r),(0,0),(0,0),(0,0),(1,0),(0,0)],
+        [(0,0),(0,0),(r,-r),(0,0),(0,0),(0,0),(0,0),(1,0)]
+    ]
+    state = [(1,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)]
+    print(move(M,2,state)[5])
 main()
