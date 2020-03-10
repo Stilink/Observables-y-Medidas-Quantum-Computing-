@@ -1,4 +1,7 @@
+from os.path import dirname, join, abspath
+import sys 
 from sys import stdin
+sys.path.insert(0, abspath(join(dirname(__file__), '..')) + "\library")
 import MatrixComplexCalculator
 
 def isDeterminism(M):
@@ -28,7 +31,7 @@ def move(M,t, state):
     return state
 
 
-def move2(M1,M2,state1,state2,t):
+def moveTwoSystemsw(M1,M2,state1,state2,t):
     state1 = move(M1,t,state1)
     state2 = move(M2,t,state2)
     state1 = MatrixComplexCalculator.transposeMatrix([state1])
@@ -236,4 +239,4 @@ def main():
     print("State in 2 clicks:")
     for i in state_click_2:
         print(i)
-main()
+# main()

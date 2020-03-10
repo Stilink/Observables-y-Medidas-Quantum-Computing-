@@ -1,8 +1,12 @@
+from os.path import dirname, join, abspath
+import sys
+import unittest
+import random
+sys.path.insert(0, abspath(join(dirname(__file__), '..')) + "\library")
 import ComplexCalculator
 import VectorComplexCalculator
 import TestComplexCalculator
-import unittest
-import random
+
 
 # Casos para los numeros
 cases = ["Positivos", "Negativos", "Positivo - Negativo", "Negativo - Positivo"]
